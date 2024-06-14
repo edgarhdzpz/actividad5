@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-feature/05_clientes
 import { ClientesService } from './clientes/clientes.service';
 import { ClientesModule } from './clientes/clientes.module';
+import { PrismaService } from './prisma/prisma.service';
 
 @Module({
   imports: [ClientesModule],
@@ -28,6 +28,10 @@ import { MunicipiosModule } from './municipios/municipios.module';
  development
 development
   controllers: [AppController],
+
   providers: [AppService, ClientesService],
+
+  providers: [AppService, PrismaService],
+
 })
 export class AppModule {}
